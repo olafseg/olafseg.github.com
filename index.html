@@ -1,0 +1,407 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "Optima", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	
+	h1 {
+		font-size:32px;
+		font-weight:300;
+	}
+	
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		15px 15px 0 0px #fff, /* The fourth layer */
+		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		20px 20px 0 0px #fff, /* The fifth layer */
+		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		25px 25px 0 0px #fff, /* The fifth layer */
+		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+<head>
+	<title>OLAF Seg</title>
+	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="Creative and Descriptive Paper Title." />
+	<meta property="og:description" content="Paper description." />
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script> 
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:36px">OLAF: A Plug-and-Play Framework for Enhanced Multi-object Multi-part Scene Parsing</span>
+		<table align=center width=900px>
+			<table align=center width=900px>
+				<tr>
+					<br>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://www.linkedin.com/in/pranav77/">Pranav Gupta<sup>1</sup></a></span>
+							
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://rishubhsingh.github.io/">Rishubh Singh<sup>2,3</sup></a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://sites.google.com/site/pshenoyuw/">Pradeep Shenoy<sup>3</sup></a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://ravika.github.io/">Ravi Kiran Sarvadevabhatla<sup>1</sup></a></span>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<table align=center width=900px>
+				<tr>
+					<td align=center width=500px>
+						<center>
+							<span style="font-size:24px"><sup>1</sup>International Institute of Information Technology, Hyderabad</span>
+							
+						</center>
+					</td>
+					<td align=center width=500px>
+						<center>
+							<span style="font-size:24px"><sup>2</sup>Swiss Federal Institute of Technology (EPFL)</span>
+							
+						</center>
+					</td>
+					<td align=center width=200px>
+						<center>
+							<span style="font-size:24px"><sup>3</sup>Google Research</span>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<table align=center width=900px>
+				<tr>
+					<br>
+					<td align=center width=600px>
+						<center>
+							<span style="font-size:24px">In <a href="https://eccv.ecva.net/">ECCV 2024</a></span>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table align=center width=650px>
+				<tr>
+					<td align=center width=120px>
+						<!-- <center>
+							<span style="font-size:24px"><a href='https://openaccess.thecvf.com/content/CVPR2022/html/Singh_FLOAT_Factorized_Learning_of_Object_Attributes_for_Improved_Multi-Object_Multi-Part_CVPR_2022_paper.html'>[Paper]</a></span>
+						</center>
+					</td>
+					<td align=center width=200px>
+						<center>
+							<span style="font-size:24px"><a href='https://github.com/google-research/google-research/tree/master/floatseg'>[Code]</a></span><br>
+						</center>
+					</td>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px"><a href='https://doi.org/10.5281/zenodo.6374908'>[Dataset]</a></span><br>
+						</center> -->
+					</td>
+				</tr>
+			</table>
+		</table>
+	</center>
+
+	<center>
+		<table align=center width=850px>
+			<tr>
+				<br>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:900px" src="./assets/figure1.jpg"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td>
+					The recipe for OLAF, our plug-and-play framework for enhanced multi-object
+					multi-part scene parsing: (1) Augment RGB input with object-based channels (fg/bg,
+					boundary edges) obtained from frozen pre-trained models (MO , ME ) (2) Use Low-level
+					Dense Feature guidance from segmentation encoder (LDF, shaded green) (3) Employ
+					targeted weight adaptation for stable optimization with augmented input. We show
+					that following this recipe leads to significant gains (up to 4.0 mIoU) across multiple
+					architectures and across multiple challenging datasets.
+				</td>
+			</tr>
+		</table>
+	</center>
+
+	<!--  <hr>
+
+	<table align=center width=850px>
+		<center><h1>Video</h1></center>
+		<tr>
+			<td>
+				<center>
+       	 			<video width="780" height="440" controls>
+                			<source src="assets/float_video.mp4" type="video/mp4">
+        			</video>
+				</center>
+			</td>
+		</tr>
+	</table> -->
+	
+	<hr>
+
+	<table align=center width=850px>
+		<center><h1>Abstract</h1></center>
+		<tr>
+			<td>
+				Multi-object multi-part scene segmentation is a challenging task whose complexity scales exponentially with part granularity and number of scene objects. 
+				To address the task, we propose a plug-and-play approach termed OLAF. First, we augment the input (RGB) with channels containing object-based structural 
+				cues (fg/bg mask, boundary edge mask). We propose a weight adaptation technique which enables regular (RGB) pre-trained models to process the augmented 
+				(5-channel) input in a stable manner during optimization. In addition, we introduce an encoder module termed LDF to provide low-level dense feature guidance. 
+				This assists segmentation, particularly for smaller parts. OLAF enables significant mIoU gains of 3.3 (Pascal-Parts-58), 3.5 
+				(Pascal-Parts-108) over the SOTA model. On the most challenging variant (Pascal-Parts-201), the gain is 4.0. Experimentally, we show that OLAF's 
+				broad applicability enables gains across  multiple architectures (CNN, U-Net, Transformer) and datasets.
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<!-- <hr> -->
+	<!-- <center><h1>Talk</h1></center> -->
+	<!-- <p align="center">
+		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
+	</p> -->
+
+	<!-- <table align=center width=800px>
+		<br>
+		<tr>
+			<center>
+				<span style="font-size:28px"><a href=''>[Slides]</a>
+				</span>
+			</center>
+		</tr>
+	</table> -->
+	<hr>
+
+	<center><h1>Method</h1></center>
+
+	<!-- <table align=center width=420px>
+		<center>
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</center>
+	</table> -->
+	<table align=center width=400px>
+		<tr>
+			<td align=center width=400px>
+				<center>
+					<td><img class="round" style="width:800px" src="./assets/FLOAT_OLAF.png"/></td>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<table align=center width=850px>
+		<center>
+			<tr>
+				<td>
+					<p>Illustration of OLAF's architectural integration with FLOAT (Sec. Methodology of Olaf)</a></sup>. FLOAT's components are tagged with &#9733;. 
+						The object masks from output <i>S<sub>o</sub></i> of object segmentation network <i>&#120591;<sub>o</sub></i> are merged to obtain the
+						 foreground map <i>fg</i>. The output of edge generation network <i>&#120591;<sub>e</sub></i> is thresholded and filtered using <i>fg</i> 
+						 to obtain edge map <i>edge</i>. The obtained maps are stacked with input image <i>I</i> to obtain the 5-channel input <i>I'</i> for the
+						  part segmentation network <i>&#120592;</i>. The interface for LDF with encoder <i>E<sub>part</sub></i> 
+						  and its architecture (top right) are also shown. A similar integration of OLAF also exists for U-Net style and Transformer style architectures.</p>
+
+				</td>
+			</tr>
+		</center>
+	</table>
+	<br>
+	<br>
+	<!-- <table align=center width=400px>
+		<tr>
+			<td align=center width=400px>
+				<center>
+					<td><img class="round" style="width:800px" src="./assets/izr.jpg"/></td>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<table align=center width=850px>
+		<center>
+			<tr>
+				<td>
+					An overview of Inference-time Zoom Refinement (IZR). During inference, predictions from the object-level network 
+					M<sub>obj</sub> are used to obtain padded bounding boxes for scene objects (B). The corresponding object crops (C) are processed by the factorized 
+					network (F). The resulting label maps (D) are composited to generate S<sub>p</sub>, the final refined part segmentation map (E). Notice the 
+					improvement in segmentation quality relative to the part label map without IZR (included for comparison).
+				</td>
+			</tr>
+		</center>
+	</table> -->
+	<!-- <table align=center width=800px>
+		<br>
+		<tr><center>
+			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
+			</center>
+		</span>
+	</table> -->
+	<br>
+	<hr>
+	<table align=center width=450px>
+		<center><h1>Paper and Supplementary Material</h1></center>
+		<tr>
+			<td><a href="https://openaccess.thecvf.com/content/CVPR2022/html/Singh_FLOAT_Factorized_Learning_of_Object_Attributes_for_Improved_Multi-Object_Multi-Part_CVPR_2022_paper.html"><img class="layered-paper-big" style="height:175px" src="./assets/paper.png"/></a></td>
+			<td><span style="font-size:14pt">P. Gupta, R. Singh, P. Shenoy, R. Sarvadevabhatla<br>
+				<b>OLAF: A Plug-and-Play Framework for Enhanced Multi-object Multi-part Scene Parsing</b><br>
+				In Conference, ECCV 2024.<br>
+				(Also hosted on <a href="https://arxiv.org/abs/2203.16168">ArXiv</a>)<br>
+				<!-- (<a href="./assets/camera-ready.pdf">camera ready</a>)<br> -->
+				<span style="font-size:4pt"><a href=""><br></a>
+				</span>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<!-- <table align=center width=600px>
+		<tr>
+			<td><span style="font-size:14pt"><center>
+				<a href="./assets/bibtex.txt">[Bibtex]</a>
+			</center></td>
+		</tr>
+	</table> -->
+
+	<hr>
+	<br>
+
+	<table align=center width=900px>
+		<tr>
+			<td width=400px>
+				<center>
+					<!-- <center><h1>Acknowledgements</h1></center> -->
+					<p style="font-size:15px;">This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.</p>
+				</center>
+			</td>
+		</tr>
+	</table>
+
+<br>
+</body>
+</html>
+
